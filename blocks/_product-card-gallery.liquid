@@ -1,4 +1,15 @@
-{% assign product = closest.product %}
+{% liquid
+  assign product = closest.product
+  assign has_applied_colour_filter = false
+  assign filters_to_check = collection.filters | default: search.filters
+
+  for filter in filters_to_check
+    if filter.type == 'list' and filter.param_name contains 'color' and filter.active_values.size > 0
+      assign has_applied_colour_filter = true
+      break
+    endif
+  endfor
+%}
 
 {% capture children %}
   {% unless product == blank %}

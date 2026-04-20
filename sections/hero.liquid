@@ -1,3 +1,5 @@
+
+
 {% liquid
   assign media_count = 0
   assign media_count_mobile = 0
@@ -509,7 +511,7 @@
       ></a>
     {%- endif -%}
     <div
-      class="hero__media-grid"
+      class="hero__media-grid{% if section.settings.parallax_effect %} parallax{% endif %}{% if section.settings.hide_media_on_mobile %} hidden--mobile{% endif %}"
       style="--hero-media-count: {{ media_count }};--hero-media-count-mobile: {{ media_count_mobile }};{%- if section.settings.image_1 != blank -%} --hero-media-aspect-ratio: {{ section.settings.image_1.aspect_ratio }};{% endif %}"
       data-testid="hero-media-wrapper"
     >
@@ -528,6 +530,7 @@
         {% if section.settings.vertical_on_mobile %}mobile-column{% endif %}
         section-content-wrapper
         {{section.settings.section_width}}
+        {{section.settings.section_width-mobile}}-mobile
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
       "
       style="{% render 'layout-panel-style', settings: section.settings %}"
@@ -574,6 +577,15 @@
 
   .hero__content-wrapper.page-width {
     grid-column: 2 / 3;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero__content-wrapper.full-width-mobile {
+      grid-column: 1 / -1;
+    }
+    .hero__content-wrapper.page-width-mobile {
+      grid-column: 2 / 3;
+    }
   }
 
   .hero__content-wrapper {
@@ -663,7 +675,7 @@
 
   .hero__media-grid,
   .hero__content-wrapper {
-    pointer-events: none;
+    /* pointer-events: none; */
 
     :is(a, button, input, textarea, select, details, summary) {
       pointer-events: auto;
@@ -806,10 +818,23 @@
       "visible_if": "{{ section.settings.media_type_1 == 'image' }}"
     },
     {
+      "type": "checkbox",
+      "id": "parallax_effect",
+      "label": "Enable parallax effect",
+      "default": false,
+      "visible_if": "{{ section.settings.media_type_1 == 'image' and section.settings.image_1 != blank }}"
+    },
+    {
       "type": "video",
       "id": "video_1",
       "label": "t:settings.video",
       "visible_if": "{{ section.settings.media_type_1 == 'video' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_media_on_mobile",
+      "label": "Hide media on mobile",
+      "default": false
     },
     {
       "type": "header",
@@ -1096,6 +1121,22 @@
     },
     {
       "type": "select",
+      "id": "section_width-mobile",
+      "label": "Mobile width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
       "id": "section_height",
       "label": "t:settings.height",
       "options": [
@@ -1236,6 +1277,34 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "use_mobile_padding",
+      "label": "Use mobile padding",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.use_mobile_padding }}"
     }
   ],
   "presets": [

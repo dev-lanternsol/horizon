@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
@@ -17,24 +17,36 @@
           "name": "t:names.heading",
           "settings": {
             "text": "<p>Browse our latest products</p>",
+            "mobile_text": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
+            "type_preset": "h1",
             "font": "var(--font-body--family)",
+            "enable_custom_font_weight": false,
+            "weight": "400",
             "font_size": "1rem",
-            "line_height": "normal",
+            "line_height": "custom",
+            "custom_line_height": 1,
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
             "color": "var(--color-foreground-heading)",
+            "use_mobile_settings": false,
+            "mobile_font_size": "1rem",
+            "mobile_custom_line_height": 1.5,
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-end": 0,
+            "use_mobile_padding": false,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
           },
           "blocks": {}
         },
@@ -61,6 +73,8 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "parallax_effect": false,
+        "hide_media_on_mobile": false,
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -73,6 +87,7 @@
         "vertical_alignment_flex_direction_column": "flex-end",
         "gap": 24,
         "section_width": "page-width",
+        "section_width-mobile": "page-width",
         "section_height": "medium",
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
@@ -83,7 +98,10 @@
         "blurred_reflection": false,
         "reflection_opacity": 75,
         "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-end": 72,
+        "use_mobile_padding": false,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 0
       }
     },
     "product_list_fa6P9H": {
@@ -259,7 +277,7 @@
           ]
         }
       },
-      "name": "t:names.featured_collection",
+      "name": "Featured collection",
       "settings": {
         "collection": "all",
         "layout_type": "grid",
