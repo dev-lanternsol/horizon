@@ -6,6 +6,9 @@
     spacer-block--size-{{ block_settings.size }}
     {% if block_settings.custom_mobile_size %}
       spacer-block--size-mobile-{{ block_settings.size_mobile }}
+      {% if block_settings.pixel_size_mobile == 0 %}
+        hidden--mobile
+      {% endif %}
     {% endif %}
   "
   style="

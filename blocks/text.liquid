@@ -11,6 +11,12 @@
       "label": "t:settings.text"
     },
     {
+      "type": "richtext",
+      "id": "mobile_text",
+      "label": "Mobile text (Optional)",
+      "info": "Replaces the text content for mobile devices"
+    },
+    {
       "type": "header",
       "content": "t:content.layout"
     },
@@ -132,6 +138,57 @@
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
     },
     {
+      "type": "checkbox",
+      "id": "enable_custom_font_weight",
+      "label": "Custom font weight",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "weight",
+      "label": "Weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400",
+      "visible_if": "{{ block.settings.type_preset == 'custom' and block.settings.enable_custom_font_weight }}"
+    },
+    {
       "type": "select",
       "id": "font_size",
       "label": "t:settings.size",
@@ -153,6 +210,10 @@
           "label": "14px"
         },
         {
+          "value": "0.9375rem",
+          "label": "15px"
+        },
+        {
           "value": "1rem",
           "label": "16px"
         },
@@ -165,8 +226,16 @@
           "label": "20px"
         },
         {
+          "value": "1.3125rem",
+          "label": "21px"
+        },
+        {
           "value": "1.5rem",
           "label": "24px"
+        },
+        {
+          "value": "1.875rem",
+          "label": "30px"
         },
         {
           "value": "2rem",
@@ -224,10 +293,24 @@
         {
           "value": "loose",
           "label": "t:options.loose"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
         }
       ],
       "default": "normal",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "custom_line_height",
+      "label": "Line height value",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.5,
+      "visible_if": "{{ block.settings.line_height == 'custom' and block.settings.type_preset == 'custom' }}"
     },
     {
       "type": "select",
@@ -309,6 +392,116 @@
       "visible_if": "{{ block.settings.type_preset != 'rte' }}"
     },
     {
+      "type": "checkbox",
+      "id": "use_mobile_settings",
+      "label": "Use different typography settings for mobile devices",
+      "default": false,
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_font_size",
+      "label": "t:settings.size",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "0.9375rem",
+          "label": "15px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.0625rem",
+          "label": "17px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        },
+        {
+          "value": "1.375rem",
+          "label": "22px"
+        },
+        {
+          "value": "1.5rem",
+          "label": "24px"
+        },
+        {
+          "value": "1.5625rem",
+          "label": "25px"
+        },
+        {
+          "value": "2rem",
+          "label": "32px"
+        },
+        {
+          "value": "2.5rem",
+          "label": "40px"
+        },
+        {
+          "value": "3rem",
+          "label": "48px"
+        },
+        {
+          "value": "3.5rem",
+          "label": "56px"
+        },
+        {
+          "value": "4.5rem",
+          "label": "72px"
+        },
+        {
+          "value": "5.5rem",
+          "label": "88px"
+        },
+        {
+          "value": "7.5rem",
+          "label": "120px"
+        },
+        {
+          "value": "9.5rem",
+          "label": "152px"
+        },
+        {
+          "value": "11.5rem",
+          "label": "184px"
+        }
+      ],
+      "default": "1rem",
+      "visible_if": "{{ block.settings.type_preset == 'custom' and block.settings.use_mobile_settings }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_custom_line_height",
+      "label": "Line height value",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.5,
+      "visible_if": "{{ block.settings.type_preset == 'custom' and block.settings.use_mobile_settings }}"
+    },
+    {
       "type": "header",
       "content": "t:content.appearance"
     },
@@ -379,6 +572,60 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_mobile_padding",
+      "label": "Use mobile padding",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
     }
   ],
   "presets": [

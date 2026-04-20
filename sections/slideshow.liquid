@@ -13,7 +13,13 @@
       arrows_on_media: true,
       controls_on_media: true,
       pagination_position: 'center',
-      icon_style: section.settings.icons_style
+      icon_style: section.settings.icons_style,
+      custom_icon: section.settings.custom_icon,
+      custom_icon_width: section.settings.custom_icon_width,
+      show_arrows_desktop: section.settings.show_arrows_desktop,
+      show_arrows_mobile: section.settings.show_arrows_mobile,
+      arrows_position: section.settings.arrows_position,
+      mobile_arrows_position: section.settings.mobile_arrows_position
     -%}
   {% endcapture %}
 {% endif %}
@@ -74,7 +80,13 @@
     autoplay_speed: section.settings.autoplay_speed,
     slides: slides,
     slide_count: section.blocks.size,
-    slide_size: section.settings.slide_height
+    slide_size: section.settings.slide_height,
+    custom_icon: section.settings.custom_icon,
+    custom_icon_width: section.settings.custom_icon_width,
+    slides_to_show: section.settings.slides_to_show,
+    mobile_slides_to_show: section.settings.mobile_slides_to_show,
+    slides_to_scroll: section.settings.slides_to_scroll,
+    mobile_slides_to_scroll: section.settings.mobile_slides_to_scroll
   %}
 </div>
 
@@ -313,11 +325,132 @@
           "label": "t:options.large_chevrons"
         },
         {
+          "value": "custom",
+          "label": "Custom"
+        },
+        {
           "value": "none",
           "label": "t:options.none"
         }
       ],
       "default": "arrows_large"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom arrow",
+      "visible_if": "{{ section.settings.icons_style == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "custom_icon_width",
+      "label": "Custom arrow width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30,
+      "visible_if": "{{ section.settings.icons_style == 'custom' }}"
+    },
+    {
+      "type": "header",
+      "content": "Slides per view"
+    },
+    {
+      "type": "range",
+      "id": "slides_to_show",
+      "label": "Desktop slides to show",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_slides_to_show",
+      "label": "Mobile slides to show",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Slides to scroll"
+    },
+    {
+      "type": "range",
+      "id": "slides_to_scroll",
+      "label": "Desktop slides to scroll",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_slides_to_scroll",
+      "label": "Mobile slides to scroll",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Arrow Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_desktop",
+      "label": "Show arrows on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_mobile",
+      "label": "Show arrows on mobile",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "arrows_position",
+      "label": "Desktop arrow position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_arrows_position",
+      "label": "Mobile arrow position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
     },
     {
       "type": "select",
@@ -356,6 +489,10 @@
         {
           "value": "counter",
           "label": "t:options.counter"
+        },
+        {
+          "value": "none",
+          "label": "t:options.none"
         }
       ],
       "default": "dots"

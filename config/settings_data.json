@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "current": {
     "logo_height": 36,
     "logo_height_mobile": 28,
@@ -45,6 +45,7 @@
     "page_transition_enabled": false,
     "transition_to_main_product": false,
     "card_hover_effect": "none",
+    "gsap_enabled": true,
     "badge_position": "top-right",
     "badge_corner_radius": 100,
     "badge_sale_color_scheme": "scheme-1",
@@ -54,9 +55,8 @@
     "button_border_radius_primary": 14,
     "secondary_button_border_width": 1,
     "button_border_radius_secondary": 14,
-    "button_font_weight_secondary": "default",
     "cart_type": "drawer",
-    "cart_price_font": "subheading",
+    "cart_price_font": "secondary",
     "show_cart_note": false,
     "show_add_discount_code": true,
     "drawer_drop_shadow": true,
@@ -278,8 +278,8 @@
         "settings": {
           "background": "rgba(0,0,0,0)",
           "foreground_heading": "#ffffff",
-          "foreground": "#f2f2f2",
-          "primary": "#eaeaea",
+          "foreground": "#ffffff",
+          "primary": "#ffffff",
           "primary_hover": "#ffffffb0",
           "border": "#e6e6e6",
           "shadow": "#000000",
@@ -355,7 +355,7 @@
     }
   },
   "presets": {
-    "Default": {
+    "Horizon": {
       "color_schemes": {
         "scheme-1": {
           "settings": {

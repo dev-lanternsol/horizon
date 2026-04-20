@@ -9,6 +9,8 @@
       assign ratio = '4 / 5'
     when 'adapt'
       assign ratio = block_settings.image.aspect_ratio
+    when 'custom'
+      assign ratio = block_settings.custom_ratio | default: '1 / 1'
   endcase
 
   if ratio == 0 or ratio == null
@@ -17,10 +19,11 @@
 %}
 
 {% capture class %}
-  image-block image-block--{{ block.id }} image-block--height-{{ block_settings.height }} spacing-style size-style
+  image-block image-block--{{ block.id }} image-block--height-{{ block_settings.height }} spacing-style size-style{% if block_settings.hide_on_mobile %} hidden--mobile{% endif %}
 {% endcapture %}
 
 {% capture style %}
+  --object-fit: {{ block_settings.image_fit | default: 'cover' }};
   --ratio: {{ ratio }};
   {% render 'size-style', settings: block_settings %}
   {% render 'spacing-style', settings: block_settings %}
@@ -96,7 +99,7 @@
   }
 
   .image-block__image {
-    object-fit: cover;
+    object-fit: var(--object-fit, cover);
     aspect-ratio: var(--ratio);
   }
 {% endstylesheet %}
@@ -115,6 +118,12 @@
       "type": "url",
       "id": "link",
       "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
     },
     {
       "type": "header",
@@ -140,9 +149,46 @@
         {
           "value": "landscape",
           "label": "t:options.landscape"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
         }
       ],
       "default": "adapt"
+    },
+    {
+      "type": "text",
+      "id": "custom_ratio",
+      "label": "Custom ratio (e.g. 3 / 2)",
+      "default": "1 / 1",
+      "info": "Define a custom aspect ratio using width / height format. Use a space before and after the slash.",
+      "visible_if": "{{ block.settings.image_ratio == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "cover",
+      "visible_if": "{{ block.settings.image_ratio == 'custom' }}"
     },
     {
       "type": "select",
@@ -318,6 +364,60 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_mobile_padding",
+      "label": "Use mobile padding",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.use_mobile_padding }}"
     }
   ],
   "presets": [

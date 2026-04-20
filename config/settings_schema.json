@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Horizon",
+    "theme_name": "Horizon: LS Mod",
     "theme_version": "3.4.0",
-    "theme_author": "Shopify",
+    "theme_author": "Lantern Sol",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -1427,6 +1427,16 @@
         ],
         "default": "lift",
         "info": "t:info.hover_effects"
+      },
+      {
+        "type": "header",
+        "content": "GSAP"
+      },
+      {
+        "type": "checkbox",
+        "id": "gsap_enabled",
+        "label": "Enable GSAP animations",
+        "default": false
       }
     ]
   },
@@ -1553,6 +1563,46 @@
         "default": 100
       },
       {
+        "type": "range",
+        "id": "primary_button_shadow_horizontal_offset",
+        "label": "Horizontal offset",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "primary_button_shadow_vertical_offset",
+        "label": "Vertical offset",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "primary_button_shadow_blur_radius",
+        "label": "Blur radius",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "primary_button_shadow_spread_radius",
+        "label": "Spread radius",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
         "type": "select",
         "id": "type_font_button_primary",
         "label": "t:settings.font",
@@ -1568,7 +1618,182 @@
         ],
         "default": "body"
       },
-
+      {
+        "type": "select",
+        "id": "button_primary_desktop_font_size",
+        "label": "Desktop font size",
+        "options": [
+          {
+            "value": "0.625rem",
+            "label": "10px"
+          },
+          {
+            "value": "0.75rem",
+            "label": "12px"
+          },
+          {
+            "value": "0.875rem",
+            "label": "14px"
+          },
+          {
+            "value": "0.9375rem",
+            "label": "15px"
+          },
+          {
+            "value": "1rem",
+            "label": "16px"
+          },
+          {
+            "value": "1.125rem",
+            "label": "18px"
+          },
+          {
+            "value": "1.25rem",
+            "label": "20px"
+          },
+          {
+            "value": "1.375rem",
+            "label": "22px"
+          },
+          {
+            "value": "1.5rem",
+            "label": "24px"
+          },
+          {
+            "value": "2rem",
+            "label": "32px"
+          },
+          {
+            "value": "2.5rem",
+            "label": "40px"
+          },
+          {
+            "value": "3rem",
+            "label": "48px"
+          },
+          {
+            "value": "3.5rem",
+            "label": "56px"
+          },
+          {
+            "value": "4.5rem",
+            "label": "72px"
+          },
+          {
+            "value": "5.5rem",
+            "label": "88px"
+          },
+          {
+            "value": "7.5rem",
+            "label": "120px"
+          },
+          {
+            "value": "9.5rem",
+            "label": "152px"
+          },
+          {
+            "value": "11.5rem",
+            "label": "184px"
+          }
+        ],
+        "default": "1rem"
+      },
+      {
+        "type": "select",
+        "id": "button_primary_mobile_font_size",
+        "label": "Mobile font size",
+        "options": [
+          {
+            "value": "0.625rem",
+            "label": "10px"
+          },
+          {
+            "value": "0.75rem",
+            "label": "12px"
+          },
+          {
+            "value": "0.875rem",
+            "label": "14px"
+          },
+          {
+            "value": "0.9375rem",
+            "label": "15px"
+          },
+          {
+            "value": "1rem",
+            "label": "16px"
+          },
+          {
+            "value": "1.125rem",
+            "label": "18px"
+          },
+          {
+            "value": "1.25rem",
+            "label": "20px"
+          },
+          {
+            "value": "1.375rem",
+            "label": "22px"
+          },
+          {
+            "value": "1.5rem",
+            "label": "24px"
+          },
+          {
+            "value": "2rem",
+            "label": "32px"
+          },
+          {
+            "value": "2.5rem",
+            "label": "40px"
+          },
+          {
+            "value": "3rem",
+            "label": "48px"
+          },
+          {
+            "value": "3.5rem",
+            "label": "56px"
+          },
+          {
+            "value": "4.5rem",
+            "label": "72px"
+          },
+          {
+            "value": "5.5rem",
+            "label": "88px"
+          },
+          {
+            "value": "7.5rem",
+            "label": "120px"
+          },
+          {
+            "value": "9.5rem",
+            "label": "152px"
+          },
+          {
+            "value": "11.5rem",
+            "label": "184px"
+          }
+        ],
+        "default": "1rem"
+      },
+      {
+        "type": "select",
+        "id": "primary_button_font_weight",
+        "label": "Font weight",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ],
+        "default": "400"
+      },
       {
         "type": "select",
         "id": "button_text_case_primary",
@@ -1584,6 +1809,104 @@
           }
         ],
         "default": "default"
+      },
+      {
+        "type": "header",
+        "content": "Primary button padding"
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 24
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_mobile_padding_primary_button",
+        "label": "Use mobile padding",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-block-start-mobile",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 16,
+        "visible_if": "{{ settings.use_mobile_padding_primary_button }}"
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-block-end-mobile",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 16,
+        "visible_if": "{{ settings.use_mobile_padding_primary_button }}"
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-inline-start-mobile",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 24,
+        "visible_if": "{{ settings.use_mobile_padding_primary_button }}"
+      },
+      {
+        "type": "range",
+        "id": "primary-button-padding-inline-end-mobile",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 24,
+        "visible_if": "{{ settings.use_mobile_padding_primary_button }}"
       },
       {
         "type": "header",
@@ -1625,7 +1948,6 @@
         ],
         "default": "body"
       },
-
       {
         "type": "select",
         "id": "button_text_case_secondary",
@@ -1764,7 +2086,6 @@
         "info": "t:info.checkout_buttons",
         "default": true
       },
-
       {
         "type": "url",
         "id": "empty_cart_button_link",
