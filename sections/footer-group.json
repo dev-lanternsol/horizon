@@ -346,6 +346,26 @@
           },
           "blocks": {}
         },
+        "social_links_mbYti7": {
+          "type": "social-links",
+          "name": "t:names.social_media_links",
+          "settings": {
+            "facebook_url": "",
+            "instagram_url": "",
+            "youtube_url": "",
+            "tiktok_url": "",
+            "twitter_url": "",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
+          },
+          "blocks": {}
+        },
         "menu_dRmy4P": {
           "type": "menu",
           "name": "t:names.menu",
@@ -413,6 +433,7 @@
       "block_order": [
         "group_H6VpwJ",
         "email_signup_crihX7",
+        "social_links_mbYti7",
         "menu_dRmy4P",
         "menu_UtzQeH",
         "menu_xMP4JW"
