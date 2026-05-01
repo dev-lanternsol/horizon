@@ -115,7 +115,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
+            "text": "<p>The Dynamat Effect</p>",
             "mobile_text": "",
             "width": "fit-content",
             "max_width": "normal",
@@ -153,7 +153,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
+            "text": "<h1>THIS ISN'T A MINOR TWEAK.IT'S THE DIFFERENCE.</h1>",
             "mobile_text": "",
             "width": "fit-content",
             "max_width": "normal",
@@ -191,7 +191,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Take a look behind the scenes of our latest product launch.</p>",
+            "text": "<p>Our 100% butyl formula doesn't just dampen noise — it converts vibration energy into heat at the molecular level. The result is a cabin that feels solid, sounds premium, and keeps you cooler.</p>",
             "mobile_text": "",
             "width": "fit-content",
             "max_width": "normal",
@@ -229,7 +229,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop now",
+            "label": "See How It Works",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
