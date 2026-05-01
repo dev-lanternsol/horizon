@@ -346,6 +346,7 @@
           "disabled": true,
           "settings": {
             "source": "uploaded",
+            "video_url": "",
             "video_autoplay": false,
             "video_loop": true,
             "alt": "",
@@ -446,7 +447,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                "text": "<p>FLAGSHIP PRODUCTS</p>",
                 "mobile_text": "",
                 "width": "fit-content",
                 "max_width": "normal",
@@ -571,6 +572,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_6RGKTX": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<div\n  class=\"AirReviews-Widget AirReviews-Widget--Stars\"\n  style=\"margin-top:0.7rem\"\n  data-review-avg=\"{{ product.metafields.air_reviews_product.review_avg }}\"\n  data-review-count=\"{{ product.metafields.air_reviews_product.review_count }}\"\n></div>"
+              },
+              "blocks": {}
+            },
             "price_JQzVV4": {
               "type": "price",
               "name": "t:names.product_price",
@@ -594,20 +603,51 @@
               },
               "blocks": {}
             },
-            "custom_liquid_6RGKTX": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
+            "buy_buttons_cYVEci": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
               "settings": {
-                "custom_liquid": "<div\n  class=\"AirReviews-Widget AirReviews-Widget--Stars\"\n  style=\"margin-top:0.7rem\"\n  data-review-avg=\"{{ product.metafields.air_reviews_product.review_avg }}\"\n  data-review-count=\"{{ product.metafields.air_reviews_product.review_count }}\"\n></div>"
+                "stacking": false,
+                "show_pickup_availability": true,
+                "gift_card_form": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
             }
           },
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
+            "custom_liquid_6RGKTX",
             "price_JQzVV4",
-            "custom_liquid_6RGKTX"
+            "buy_buttons_cYVEci"
           ]
         }
       },
