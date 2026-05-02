@@ -614,6 +614,7 @@
         "footer_copyright_jweRK8": {
           "type": "footer-copyright",
           "settings": {
+            "design_by": "Designed by Lantern Sol",
             "show_powered_by": true,
             "font_size": "0.75rem",
             "case": "none"
