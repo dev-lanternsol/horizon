@@ -91,7 +91,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#1a2a49",
           "foreground_heading": "#000000",
           "foreground": "#000000cf",
           "primary": "#000000cf",
@@ -130,10 +130,10 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#f5f5f5",
-          "foreground_heading": "#000000",
-          "foreground": "#000000cf",
-          "primary": "#000000cf",
+          "background": "#1a2a49",
+          "foreground_heading": "#ffffff",
+          "foreground": "#ffffffcf",
+          "primary": "#ffffffff",
           "primary_hover": "#ffffff",
           "border": "#dfdfdf",
           "shadow": "#000000",
@@ -144,7 +144,7 @@
           "primary_button_hover_text": "#ffffff",
           "primary_button_hover_border": "#333333",
           "secondary_button_background": "rgba(0,0,0,0)",
-          "secondary_button_text": "#000000",
+          "secondary_button_text": "#ffffff",
           "secondary_button_border": "#000000",
           "secondary_button_hover_background": "#ffffff5c",
           "secondary_button_hover_text": "#000000",
