@@ -24,7 +24,9 @@
     {{ block.shopify_attributes }}
     aria-hidden="{% if block_index == 0 %}false{% else %}true{% endif %}"
   >
-    {{ block.settings.heading }}
+    {% if block.settings.heading != blank %}
+        {{ block.settings.heading }}
+    {% endif %}
     <p class="announcement-bar__text">
       {{ block.settings.text }}
     </p>
