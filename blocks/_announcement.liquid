@@ -27,6 +27,9 @@
     {% if block.settings.image != blank %}
         {{ block.settings.image | image_url: width: 50 | image_tag }}
     {% endif %}
+    {% if block.settings.caption != blank %}
+        {{ block.settings.caption }}
+    {% endif %}
     {% if block.settings.heading != blank %}
         {{ block.settings.heading }}
     {% endif %}
