@@ -25,7 +25,7 @@
     aria-hidden="{% if block_index == 0 %}false{% else %}true{% endif %}"
   >
     {% if block.settings.image != blank %}
-        {{ block.settings.image }}
+        {{ block.settings.image | image_url: width: 50 | image_tag }}
     {% endif %}
     {% if block.settings.heading != blank %}
         {{ block.settings.heading }}
