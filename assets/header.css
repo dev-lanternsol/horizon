@@ -10,7 +10,7 @@ header .mega-menu__list .mega-menu__link span {
 header .mega-menu__list .mega-menu__link.mega-menu__link--parent {
 	background: #39B4E71F;
 	border-radius: 2em;
-	padding: 5px 15px;
+	padding: 8px 15px;
     margin-bottom:10px;
 }
 header .mega-menu__list .mega-menu__link.mega-menu__link--parent span {
