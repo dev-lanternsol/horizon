@@ -5240,6 +5240,7 @@ product-recommendations:has([data-has-recommendations='false']) {
   --main-font: 'Bw Modelica';
   --dark-blue:#1A2A49;
   --grey-text:#B0B8C3;
+  --sky-color:#39B4E7;
 }
 
 header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);font-weight:600;}
