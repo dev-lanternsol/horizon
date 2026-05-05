@@ -4,6 +4,6 @@
 header .menu-list__submenu {
 	background: var(--dark-blue);
 }
-.mega-menu__list .mega-menu__link span {
+header .mega-menu__list .mega-menu__link span {
 	color: var(--grey-text);
 }
