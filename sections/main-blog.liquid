@@ -77,7 +77,7 @@
               results
             </div>
             <div class="article-grid__progress">
-              <div class="article-grid__progress-bar" style="width: {{ per_page | at_most: total_count_all | times: 100.0 | divided_by: total_count_all }}%"></div>
+              <div class="article-grid__progress-bar" style="width: {{ items_on_page | at_most: total_count_all | times: 100.0 | divided_by: total_count_all }}%"></div>
             </div>
             <button class="article-grid__load-more" ref="viewMoreNext">Load More Articles</button>
           </div>
