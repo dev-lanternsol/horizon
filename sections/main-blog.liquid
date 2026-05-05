@@ -57,6 +57,7 @@
         <div
           class="blog-post-item"
           data-testid="blog-post-item"
+          data-page="{{ page }}"
           data-blog-index="{{ section.id }}-{{ forloop.index }}"
         >
           {% content_for 'block', id: 'static-blog-post-card', type: '_blog-post-card', article: article %}
