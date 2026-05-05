@@ -35,7 +35,7 @@
             class="article-chip article-chip--active"
             data-category=""
             data-total="{{ total_count_all }}">All Articles</button>
-          {% for cat in categories %}
+          {% for tags in blog.all_tags %}
             {% if cat != blank %}
               {% liquid
                 assign total = 0
