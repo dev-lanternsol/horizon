@@ -7,6 +7,13 @@ header .menu-list__submenu {
 header .mega-menu__list .mega-menu__link span {
 	color: var(--grey-text);
 }
-header .mega-menu__list .mega-menu__link.mega-menu__link--parent  {
-	background:#39B4E71F;
+header .mega-menu__list .mega-menu__link.mega-menu__link--parent {
+	background: #39B4E71F;
+	border-radius: 2em;
+	padding: 5px 15px;
+}
+header .mega-menu__list .mega-menu__link.mega-menu__link--parent span {
+	background: #39B4E71F;
+	border-radius: 2em;
+	padding: 5px 15px;
 }
