@@ -7,7 +7,6 @@
   assign title = article.title
   assign url = article.url
   assign category = article.metafields.custom.category
-  assign icon = article.metafields.blogs.flag
   assign date = article.metafields.custom.date | default: article.published_at | date: "%B %Y"
 
  
