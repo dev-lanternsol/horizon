@@ -90,12 +90,11 @@
   </div>
 
   <div class="article-card__text">
-    {% if excerpt != blank %}
-      <div class="article-card__excerpt text-block">
-        {% render 'text', block: block, fallback_text: excerpt %}
+    {% if category != blank %}
+      <div class="article-card__location-icon caption text-block--align-{{ block_settings.alignment }}">
+          <span class="article-card__location">{{ category }}</span>
       </div>
-    {% endif %}
-
+        {% endif %}
     {% if title != blank %}
       {%  capture title %}  
         {% if url != blank %}
