@@ -112,13 +112,12 @@
       </div>
     {% endif %}
 
-    {% if icon != blank %}
+
       <div class="article-card__location-icon caption text-block--align-{{ block_settings.alignment }}">
-        {% if location != blank %}
-          <span class="article-card__location">{{ location }}{{ icon }}</span>
+        {% if category != blank %}
+          <span class="article-card__location">{{ category }}</span>
         {% endif %}
       </div>
-    {% endif %}
 
     {% if date != blank %}
       <div class="article-card__date caption text-block--align-{{ block_settings.alignment }}">
