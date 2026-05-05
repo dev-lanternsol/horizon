@@ -19,7 +19,7 @@
   >
     {% content_for 'blocks' %}
  {% liquid
-        assign items_on_page = blog.articles.size
+        assign items_on_page = 9
         assign last_page = total_count_all | divided_by: items_on_page
           assign remainder = total_count_all | modulo: items_on_page
           if remainder > 0
