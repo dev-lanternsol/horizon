@@ -5243,6 +5243,6 @@ product-recommendations:has([data-has-recommendations='false']) {
   --sky-color:#39B4E7;
 }
 
-header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);font-weight:600;}
+header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);font-weight:600;color:#fff;} 
 body .button{font-family:var(--main-font);  }
 
