@@ -140,20 +140,31 @@
     let currentPage = 1;
     const lastPage = Number(gridEl ?. dataset ?. lastPage || gridEl ?. getAttribute('data-last-page') || 1);
 
-    const updateCounts = () => {
-      const cards = Array.from(gridEl.querySelectorAll('[ref="cards[]"]'));
-      const visible = cards.filter((c) => c.style.display !== 'none').length;
-      const activeChip = chips.find((c) => c.classList.contains('article-chip--active'));
-      const total = activeChip
-        ? Number(activeChip.dataset.total || 0)
-        : cards.length;
-      countShownEl.textContent = String(visible);
-      countTotalEl.textContent = String(total);
-      const pct = total > 0
-        ? Math.min(100, Math.round((visible / total) * 100))
-        : 0;
-      progressEl.style.width = pct + '%';
-    };
+ const updateCounts = () => {
+  const cards = Array.from(gridEl.querySelectorAll('[ref="cards[]"]'));
+  const activeChip = chips.find((c) => c.classList.contains('article-chip--active'));
+  const activeCategory = activeChip ? activeChip.dataset.category : '';
+
+  // Total = all cards matching category (not just visible)
+  const total = cards.filter((c) => {
+    return !activeCategory || c.dataset.category === activeCategory;
+  }).length;
+
+  // Visible cards (after pagination + filter)
+  const visible = cards.filter((c) => {
+    return c.style.display !== 'none' &&
+      (!activeCategory || c.dataset.category === activeCategory);
+  }).length;
+
+  countShownEl.textContent = String(visible);
+  countTotalEl.textContent = String(total);
+
+  const pct = total > 0
+    ? Math.min(100, Math.round((visible / total) * 100))
+    : 0;
+
+  progressEl.style.width = pct + '%';
+};
 
     const applyFilter = (category) => {
       const cards = Array.from(gridEl.querySelectorAll('[ref="cards[]"]'));
