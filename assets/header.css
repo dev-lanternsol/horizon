@@ -4,3 +4,6 @@
 .menu-list__submenu {
 	background: var(--dark-blue);;
 }
+.mega-menu__list .mega-menu__link span {
+	color: red;
+}
