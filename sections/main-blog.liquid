@@ -122,11 +122,11 @@
     const sectionEl = (() => {
       const script = document.currentScript;
       if (script) {
-        const nearest = script.closest('section.article-grid');
+        const nearest = script.closest('.blog-posts');
         if (nearest) return nearest;
         
       }
-      return document.querySelector('section.article-grid');
+      return document.querySelector('.blog-posts');
     })();
     if (! sectionEl) return;
     
