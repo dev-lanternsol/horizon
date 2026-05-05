@@ -100,7 +100,7 @@
         "settings": {
           "background": "#39b4e7",
           "foreground_heading": "#000000",
-          "foreground": "#000000cf",
+          "foreground": "#f2f2f2",
           "primary": "#000000cf",
           "primary_hover": "#000000",
           "border": "#0000000f",
