@@ -7,7 +7,7 @@
   assign title = article.title
   assign url = article.url
   assign category = article.metafields.custom.category
-  assign date = article.metafields.custom.date | default: article.published_at | date: "%B %F %Y"
+  assign date = article.metafields.custom.date | default: article.published_at | date: "%B %D %Y"
 
  
       assign image_source = block_settings.article.image
