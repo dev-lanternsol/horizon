@@ -72,16 +72,7 @@
   {%- endif -%}
 {% endcapture %}
 
-{% assign icon_block_class = 'icon-block__media icon-block-' | append: block.id %}
 
-{% capture icon %}
-  {% render 'icon-or-image',
-    icon: 'none',
-    image_upload: icon,
-    width: block_settings.icon_width,
-    class_name: icon_block_class
-  %}
-{% endcapture %}
 
 <div class="article-card">
   <div class="article-card__image-wrapper">
