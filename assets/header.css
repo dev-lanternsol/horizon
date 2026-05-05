@@ -13,7 +13,7 @@ header .mega-menu__list .mega-menu__link.mega-menu__link--parent {
 	padding: 5px 15px;
 }
 header .mega-menu__list .mega-menu__link.mega-menu__link--parent span {
-	color: #39B4E7;
+	color:var(--sky-color);
 	font-weight:700;
     font-size:12px;
     text-transform:uppercase;
