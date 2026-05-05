@@ -5241,4 +5241,4 @@ product-recommendations:has([data-has-recommendations='false']) {
 }
 
 header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);}
-body .button{font-family:var(--main-font); font-weight:700;}
+body .button{font-family:var(--main-font); }
