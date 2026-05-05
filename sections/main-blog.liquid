@@ -25,6 +25,11 @@
     >
       {% liquid
         assign items_on_page = blog.articles.size
+        assign last_page = total_count_all | divided_by: items_on_page
+          assign remainder = total_count_all | modulo: items_on_page
+          if remainder > 0
+            assign last_page = last_page | plus: 1
+          endif
       %}
       {% for article in blog.articles %}
         {% liquid
