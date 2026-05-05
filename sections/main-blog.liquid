@@ -18,13 +18,7 @@
     style="{% render 'spacing-style', settings: section.settings %}"
   >
     {% content_for 'blocks' %}
-
-    <div
-      ref="grid"
-      class="blog-posts-container"
-      data-last-page="{{ last_page }}"
-    >
-      {% liquid
+ {% liquid
         assign items_on_page = blog.articles.size
         assign last_page = total_count_all | divided_by: items_on_page
           assign remainder = total_count_all | modulo: items_on_page
@@ -32,6 +26,12 @@
             assign last_page = last_page | plus: 1
           endif
       %}
+    <div
+      ref="grid"
+      class="blog-posts-container"
+      data-last-page="{{ last_page }}"
+    >
+     
       {% for article in blog.articles %}
         {% liquid
           # Defaults for compact layout
