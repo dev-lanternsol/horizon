@@ -75,6 +75,7 @@
           class="blog-post-item"
           data-testid="blog-post-item"
           data-page="{{ page }}"
+          data-category="{{ cat | escape }}"
           {% if page > 1 %}
           style="display:none"
           {% endif %}
