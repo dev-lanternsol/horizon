@@ -526,7 +526,7 @@
           "name": "t:names.menu",
           "settings": {
             "menu": "main-menu",
-            "heading": "",
+            "heading": "Shop",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
@@ -547,7 +547,7 @@
           "name": "t:names.menu",
           "settings": {
             "menu": "main-menu",
-            "heading": "",
+            "heading": "Company",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
@@ -568,7 +568,7 @@
           "name": "t:names.menu",
           "settings": {
             "menu": "main-menu",
-            "heading": "",
+            "heading": "Support",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
