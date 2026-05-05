@@ -1,9 +1,9 @@
 .header__column--right .button {
 	margin-left: 20px;
 }
-.menu-list__submenu {
-	background: var(--dark-blue);;
+header .menu-list__submenu {
+	background: var(--dark-blue);
 }
 .mega-menu__list .mega-menu__link span {
-	color: red;
+	color: var(--grey-text);
 }
