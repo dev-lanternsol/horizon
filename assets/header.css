@@ -1,7 +1,8 @@
 .header__column--right .button {
 	margin-left: 20px;
 }
-header .menu-list__submenu {
+header .menu-list__submenu ,
+header .menu-list__submenu-inner{
 	background: var(--dark-blue);
 }
 header .mega-menu__list .mega-menu__link span {
