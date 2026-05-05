@@ -5237,5 +5237,5 @@ product-recommendations:has([data-has-recommendations='false']) {
 
 
 :root {
-  --main-font: #3498db;
+  --main-font: 'Bw Modelica';
 }
