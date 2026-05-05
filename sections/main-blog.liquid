@@ -6,7 +6,7 @@
 {% liquid
     # Build unique categories list
     assign categories = ''
-    for a in selected_blog.articles
+    for a in blog.articles
       assign cat = a.metafields.custom.category | default: ''
       if cat != ''
         unless categories contains cat
@@ -46,7 +46,7 @@
           <button
             class="article-chip article-chip--active"
             data-category=""
-            data-total="{{ total_count_all }}">All Articles</button>
+            data-total="{{ total_count_all }}">All</button>
          {% for cat in categories %}
             {% if cat != blank %}
               <button
