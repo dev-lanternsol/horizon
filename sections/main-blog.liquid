@@ -36,7 +36,6 @@
             data-category=""
             data-total="{{ total_count_all }}">All Articles</button>
           {% for tags in blog.all_tags %}
-            {% if cat != blank %}
               {% liquid
                 assign total = 0
                 assign pairs = category_counts | split: '|'
@@ -53,7 +52,6 @@
                 class="article-chip"
                 data-category="{{ cat | escape }}"
                 data-total="{{ total }}">{{ cat }}</button>
-            {% endif %}
           {% endfor %}
         </div>
     <div
