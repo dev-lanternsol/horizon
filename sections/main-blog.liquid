@@ -22,6 +22,7 @@
     <div
       ref="grid"
       class="blog-posts-container"
+      data-last-page="{{ last_page }}"
     >
       {% liquid
         assign items_on_page = blog.articles.size
