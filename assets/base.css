@@ -5235,7 +5235,8 @@ product-recommendations:has([data-has-recommendations='false']) {
   }
 }
 
-
+/*Default-css*/
 :root {
   --main-font: 'Bw Modelica';
 }
+
