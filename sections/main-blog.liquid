@@ -35,11 +35,25 @@
             class="article-chip article-chip--active"
             data-category=""
             data-total="{{ total_count_all }}">All Articles</button>
-          {% for tags in blog.all_tags %}
+         {% for cat in categories %}
+            {% if cat != blank %}
+              {% liquid
+                assign total = 0
+                assign pairs = category_counts | split: '|'
+                for pair in pairs
+                  if pair contains cat
+                    assign parts = pair | split: ':'
+                    if parts[0] == cat
+                      assign total = parts[1]
+                    endif
+                  endif
+                endfor
+              %}
               <button
                 class="article-chip"
-                data-category="{{ tags | escape }}"
-                data-total="{{ total }}">{{ tags }}</button>
+                data-category="{{ cat | escape }}"
+                data-total="{{ total }}">{{ cat }}</button>
+            {% endif %}
           {% endfor %}
         </div>
     <div
