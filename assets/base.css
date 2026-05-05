@@ -5240,4 +5240,4 @@ product-recommendations:has([data-has-recommendations='false']) {
   --main-font: 'Bw Modelica';
 }
 
-header .menu-list li  span.menu-list__link-title{}
+header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);}
