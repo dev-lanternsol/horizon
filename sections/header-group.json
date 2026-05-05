@@ -17,9 +17,10 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
+            "image": "shopify://shop_images/wave-icn.svg",
             "caption": "",
             "heading": "",
-            "text": "Welcome to our store",
+            "text": "Record it with our new Al Noise Analyzer get instant Dynamat product recommendations!",
             "button_label": "",
             "link": "",
             "font": "var(--font-subheading--family)",
@@ -69,7 +70,7 @@
           "static": true,
           "settings": {
             "menu": "horizon-menu",
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "type_font_primary_size": "0.75rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "body",
