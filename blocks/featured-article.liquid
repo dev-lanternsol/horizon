@@ -75,20 +75,6 @@
 
 
 <div class="article-card">
-  <div class="article-card__image-wrapper">
-    {% if url == blank %}
-      <div>
-        {{ image }}
-      </div>
-    {% else %}
-      <a
-        href="{{ block_settings.link }}"
-      >
-        {{ image }}
-      </a>
-    {% endif %}
-  </div>
-
   <div class="article-card__text">
     {% if category != blank %}
       <div class="article-card__location-icon caption text-block--align-{{ block_settings.alignment }}">
@@ -120,6 +106,19 @@
       <div class="article-card__date caption text-block--align-{{ block_settings.alignment }}">
         {{ date }}
       </div>
+    {% endif %}
+  </div>
+   <div class="article-card__image-wrapper">
+    {% if url == blank %}
+      <div>
+        {{ image }}
+      </div>
+    {% else %}
+      <a
+        href="{{ block_settings.link }}"
+      >
+        {{ image }}
+      </a>
     {% endif %}
   </div>
 </div>
