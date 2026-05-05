@@ -8,5 +8,5 @@ header .mega-menu__list .mega-menu__link span {
 	color: var(--grey-text);
 }
 header .mega-menu__list .mega-menu__link.mega-menu__link--parent  {
-	background:red
+	background:#39B4E71F;
 }
