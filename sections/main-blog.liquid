@@ -51,6 +51,7 @@
       {% for article in blog.articles %}
          {% assign idx0 = forloop.index0 %}
           {% assign page = idx0 | divided_by: items_on_page | plus: 1 %}
+           {% assign cat = article.metafields.custom.category | default: '' %}
         {% liquid
           # Defaults for compact layout
           assign col_span = 2
