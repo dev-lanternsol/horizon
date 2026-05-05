@@ -597,7 +597,7 @@
         "section_width": "page-width",
         "gap": 20,
         "color_scheme": "scheme-3",
-        "padding-block-start": 30,
+        "padding-block-start": 50,
         "padding-block-end": 30,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
