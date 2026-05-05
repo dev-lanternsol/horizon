@@ -7,6 +7,6 @@ header .menu-list__submenu {
 header .mega-menu__list .mega-menu__link span {
 	color: var(--grey-text);
 }
-header .mega-menu__list .mega-menu__link.mega-menu__link--parent span {
-	color: var(--grey-text);
+header .mega-menu__list .mega-menu__link.mega-menu__link--parent  {
+	background:red
 }
