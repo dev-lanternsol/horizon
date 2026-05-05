@@ -275,7 +275,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>New arrivals</h2>",
+                "text": "<p>The #1 name in sound deadening and heat control since 1989.</p>",
                 "mobile_text": "",
                 "width": "fit-content",
                 "max_width": "normal",
