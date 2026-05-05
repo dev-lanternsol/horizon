@@ -10,16 +10,9 @@
   assign icon = article.metafields.blogs.flag
   assign date = article.metafields.custom.date | default: article.published_at | date: "%B %Y"
 
-  case block_settings.image_source
-    when 'image'
+ 
       assign image_source = block_settings.article.image
-    when 'popup_image'
-      assign image_source = block_settings.article.metafields.custom.popup_image
-    when 'metafield_image'
-      assign image_source = block_settings.article.metafields.custom.image
-    else
-      assign image_source = block_settings.article.image
-  endcase
+ 
 
   case block_settings.image_ratio
     when 'landscape'
@@ -224,26 +217,6 @@
     {
       "type": "header",
       "content": "Image settings"
-    },
-    {
-      "type": "select",
-      "id": "image_source",
-      "label": "Image source",
-      "options": [
-        {
-          "value": "image",
-          "label": "Article image"
-        },
-        {
-          "value": "popup_image",
-          "label": "Popup image"
-        },
-        {
-          "value": "metafield_image",
-          "label": "Metafield image"
-        }
-      ],
-      "default": "image"
     },
     {
       "type": "select",
