@@ -83,7 +83,89 @@
           </div>
   </div>
 </blog-posts-list>
+{% javascript %}
+  (() => {
 
+// Avoid Liquid in JS: locate the section element relative to this script
+    const sectionEl = (() => {
+      const script = document.currentScript;
+      if (script) {
+        const nearest = script.closest('section.article-grid');
+        if (nearest) return nearest;
+        
+      }
+      return document.querySelector('section.article-grid');
+    })();
+    if (! sectionEl) return;
+    
+
+    const gridEl = sectionEl.querySelector('[ref="grid"]');
+    const countShownEl = sectionEl.querySelector('[data-count-shown]');
+    const countTotalEl = sectionEl.querySelector('[data-count-total]');
+    const progressEl = sectionEl.querySelector('.article-grid__progress-bar');
+    const chips = Array.from(sectionEl.querySelectorAll('.article-chip'));
+    const loadMoreBtn = sectionEl.querySelector('[ref="viewMoreNext"]');
+    let currentPage = 1;
+    const lastPage = Number(gridEl ?. dataset ?. lastPage || gridEl ?. getAttribute('data-last-page') || 1);
+
+    const updateCounts = () => {
+      const cards = Array.from(gridEl.querySelectorAll('[ref="cards[]"]'));
+      const visible = cards.filter((c) => c.style.display !== 'none').length;
+      const activeChip = chips.find((c) => c.classList.contains('article-chip--active'));
+      const total = activeChip
+        ? Number(activeChip.dataset.total || 0)
+        : cards.length;
+      countShownEl.textContent = String(visible);
+      countTotalEl.textContent = String(total);
+      const pct = total > 0
+        ? Math.min(100, Math.round((visible / total) * 100))
+        : 0;
+      progressEl.style.width = pct + '%';
+    };
+
+    const applyFilter = (category) => {
+      const cards = Array.from(gridEl.querySelectorAll('[ref="cards[]"]'));
+      cards.forEach((card) => {
+        const matches = !category || card.dataset.category === category;
+        card.style.display = matches
+          ? ''
+          : 'none';
+      });
+      updateCounts();
+      document.dispatchEvent(new Event('filter:update'));
+    };
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.remove('article-chip--active'));
+        chip.classList.add('article-chip--active');
+        applyFilter(chip.dataset.category || '');
+      });
+    });
+
+// Update counts when new cards are appended
+    const observer = new MutationObserver(() => updateCounts());
+    observer.observe(gridEl, {
+      childList: true,
+      subtree: false
+    });
+
+// Client-side progressive reveal
+    loadMoreBtn ?. addEventListener('click', () => {
+      if (currentPage >= lastPage) return;
+      
+      currentPage += 1;
+      const nextCards = Array.from(gridEl.querySelectorAll('[ref="cards[]"][data-page="' + currentPage + '"]'));
+      nextCards.forEach((c) => (c.style.display = ''));
+      updateCounts();
+      if (currentPage >= lastPage) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+
+    updateCounts();
+  })();
+{% endjavascript %}
 {% stylesheet %}
   /**
    * Blog posts page layout
