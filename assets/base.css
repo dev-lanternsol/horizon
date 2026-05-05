@@ -5238,8 +5238,9 @@ product-recommendations:has([data-has-recommendations='false']) {
 /*Default-css*/
 :root {
   --main-font: 'Bw Modelica';
+  --dark-blue:
 }
 
-header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);}
+header .menu-list li  span.menu-list__link-title{font-family:var(--main-font);font-weight:600;}
 body .button{font-family:var(--main-font);  }
 
